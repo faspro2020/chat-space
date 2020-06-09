@@ -1,3 +1,12 @@
 .Side-bar
   .Side-bar__user-name
+    .Top-items
+      .Top-items__name
+        tatsuya
+      .Top-items__icon
+        = link_to "#", class: "Top-items__icon--edit" do
+          = icon('far', 'edit')
+          %span<>
+        = link_to "#", class: "Top-items__icon--config" do
+          = icon('fas', 'cog')
   .Side-bar__group-list

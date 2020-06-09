@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .wrapper {
   display: flex;
   .Side-bar {
@@ -11,6 +16,26 @@
       background-color: #253141;
       height: 100px;
       width: 300px;
+      display: flex;
+      align-items: center;
+      .Top-items {
+        height: 20px;
+        width: 260px;
+        margin: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        &__name {
+          color: #ffffff;
+        }
+        &__icon {
+          width: 60px;
+          text-align: right;
+          &--edit {
+            padding-right: 5px;
+          }
+        }
+        }
+
     }
     &__group-list {
       background-color: #2f3e51;
