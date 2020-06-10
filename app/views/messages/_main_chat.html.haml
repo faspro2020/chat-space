@@ -27,3 +27,10 @@
       .Chat-comment
         こんばんは。今夜は月が綺麗ですね
   .Chat-main__message-form
+    %form.Form-all
+      .Forms
+        %input{type: "text", class: "Forms__input-box", placeholder: "text a message"}
+        %label{class: "Forms__label"}
+          = icon('far', 'images')
+          %input{type: "file", class: "Forms__image-file"}
+      %input{type: "submit", class: "Forms__btn", value: "Send"}
