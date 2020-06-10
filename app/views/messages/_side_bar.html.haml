@@ -2,12 +2,12 @@
   .Side-bar__user-name
     .Top-items
       .Top-items__name
-        炭治郎
+        = current_user.name
       .Top-items__icon
         = link_to "#", class: "Top-items__icon--edit" do
           = icon('far', 'edit')
           %span<>
-        = link_to "#", class: "Top-items__icon--config" do
+        = link_to edit_user_path(current_user), class: "Top-items__icon--config" do
           = icon('fas', 'cog')
   .Side-bar__group-list
     .group-name
