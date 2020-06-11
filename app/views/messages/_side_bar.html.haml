@@ -4,13 +4,16 @@
       .Top-items__name
         = current_user.name
       .Top-items__icon
-        = link_to "#", class: "Top-items__icon--edit" do
+        = link_to new_group_path, class: "Top-items__icon--edit" do
           = icon('far', 'edit')
           %span<>
         = link_to edit_user_path(current_user), class: "Top-items__icon--config" do
           = icon('fas', 'cog')
   .Side-bar__group-list
-    .group-name
-      柱
-    .none-message
-      まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group-name
+            柱
+          .None-message
+            まだメッセージはありません。
