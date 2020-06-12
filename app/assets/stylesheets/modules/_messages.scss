@@ -42,6 +42,7 @@
       height: calc(100vh - 100px);
       width: 300px;
       padding: 20px 20px 40px;
+      overflow: auto;
       .Group-name {
         color: #ffffff;
         font-size: 15px;
@@ -94,6 +95,7 @@
       }
     }
     &__message-list {
+      overflow: auto;
       background-color: #fafafa;
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);

@@ -3,6 +3,10 @@
     .Chat-name__box
       = message.user.name
   .Chat-date
-    2020年06月09日 20時26分
+    = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
 .Chat-comment
-  俺は嫌われていない
+  .Chat-comment__content
+    - if message.content.present?
+      %p.Message__content
+        = message.content
+    = image_tag message.image.url, class: 'Message__image' if message.image.present?
