@@ -14,6 +14,6 @@
       .Group
         = link_to group_messages_path(group) do
           .Group-name
-            柱
+            = group.name
           .None-message
-            まだメッセージはありません。
+            = group.show_last_message

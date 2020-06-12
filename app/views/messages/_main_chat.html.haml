@@ -2,30 +2,25 @@
   .Chat-main__group-info
     .Main-group
       .Main-group__name
-        柱
+        = @group.name
       .Main-group__member
-        Member：炭治郎　義勇　しのぶ
+        - @group.users.each do |name|
+          = name.name
+
     .Group-edit
       = link_to edit_group_path(@group) do
         Edit
   .Chat-main__message-list
-    .Chat-container
-      .Chat-message
-        .Chat-name
-          .Chat-name__box
-            義勇
-        .Chat-date
-          2020年06月09日 20時26分
-      .Chat-comment
-        俺は嫌われていない
-      .Chat-message
-        .Chat-name
-          .Chat-name__box
-            しのぶ
-        .Chat-date
-          2020年06月09日 21時33分
-      .Chat-comment
-        こんばんは。今夜は月が綺麗ですね
+    = render @messages
+    
+    .Chat-message
+      .Chat-name
+        .Chat-name__box
+          しのぶ
+      .Chat-date
+        2020年06月09日 21時33分
+    .Chat-comment
+      こんばんは。今夜は月が綺麗ですね
   .Chat-main__message-form
     %form
     = form_with model: [@group, @message], html: {class: "Form-all"}, local: true do |f|
