@@ -6,7 +6,7 @@
       .Main-group__member
         Member：炭治郎　義勇　しのぶ
     .Group-edit
-      = link_to edit_group_path(1) do
+      = link_to edit_group_path(@group) do
         Edit
   .Chat-main__message-list
     .Chat-container
@@ -14,7 +14,7 @@
         .Chat-name
           .Chat-name__box
             義勇
-        .Chat-at
+        .Chat-date
           2020年06月09日 20時26分
       .Chat-comment
         俺は嫌われていない
@@ -22,15 +22,16 @@
         .Chat-name
           .Chat-name__box
             しのぶ
-        .Chat-at
+        .Chat-date
           2020年06月09日 21時33分
       .Chat-comment
         こんばんは。今夜は月が綺麗ですね
   .Chat-main__message-form
-    %form.Form-all
+    %form
+    = form_with model: [@group, @message], html: {class: "Form-all"}, local: true do |f|
       .Forms
-        %input{type: "text", class: "Forms__input-box", placeholder: "text a message"}
-        %label{class: "Forms__label"}
-          = icon('far', 'images')
-          %input{type: "file", class: "Forms__image-file"}
-      %input{type: "submit", class: "Forms__btn", value: "Send"}
+        = f.text_field :content, class: 'Forms__input-box', placeholder: 'type a message'
+        = f.label :image, class: 'Forms__label' do
+          = icon('far', 'images', class: 'Form__icon')
+          = f.file_field :image, class: 'Forms__image-file'
+      = f.submit 'Send', class: 'Forms__btn'
