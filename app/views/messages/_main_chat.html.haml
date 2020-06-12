@@ -13,14 +13,6 @@
   .Chat-main__message-list
     = render @messages
     
-    .Chat-message
-      .Chat-name
-        .Chat-name__box
-          しのぶ
-      .Chat-date
-        2020年06月09日 21時33分
-    .Chat-comment
-      こんばんは。今夜は月が綺麗ですね
   .Chat-main__message-form
     %form
     = form_with model: [@group, @message], html: {class: "Form-all"}, local: true do |f|
