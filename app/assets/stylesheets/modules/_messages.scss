@@ -50,6 +50,7 @@
       .None-message {
         color: #ffffff;
         font-size: 11px;
+        margin-bottom: 40px;
       }
       
     }
@@ -96,32 +97,30 @@
       background-color: #fafafa;
       height: calc(100vh - 190px);
       width: calc(100vw - 300px);
-      .Chat-container {
-        padding: 35px 40px;
-        .Chat-message {
+      padding: 35px 40px;
+      .Chat-message {
+        display: flex;
+        margin-bottom: 12px;
+        .Chat-name {
           display: flex;
-          margin-bottom: 12px;
-          .Chat-name {
-            display: flex;
-            align-items: center;
-            &__box {
-              text-align: left;
-              font-size: 16px;
-              color: #333333;
-              font-weight: bold;
-              padding-right: 10px;
-            }          
-          }
-          .Chat-at {
-            font-size: 12px;
-            color: #999999;
-          }
+          align-items: center;
+          &__box {
+            text-align: left;
+            font-size: 16px;
+            color: #333333;
+            font-weight: bold;
+            padding-right: 10px;
+          }          
         }
-        .Chat-comment {
-          font-size: 14px;
-          color: #434A54;
-          margin-bottom: 46px;
+        .Chat-date {
+          font-size: 12px;
+          color: #999999;
         }
+      }
+      .Chat-comment {
+        font-size: 14px;
+        color: #434A54;
+        margin-bottom: 46px;
       }
     }
     &__message-form {
