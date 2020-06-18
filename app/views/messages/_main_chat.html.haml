@@ -6,7 +6,6 @@
       .Main-group__member
         - @group.users.each do |name|
           = name.name
-
     .Group-edit
       = link_to edit_group_path(@group) do
         Edit
