@@ -49,26 +49,27 @@ $(function(){
     };
   }
   
-  $('.Form-all').on('submit', function(e){
-    e.preventDefault();
-    let formData = new FormData(this);
-    let url = $(this).attr('action');
+  let reloadMessages = function() {
+    let last_message_id = $('.MessageBox:last').data("message-id");
     $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
+      url: "api/messages",
+      type: 'get',
       dataType: 'json',
-      processData: false,
-      contentType: false
+      data: {id: last_message_id}
     })
-    .done(function(data){
-      let html = buildHTML(data);
-      $('.Chat-main__message-list').append(html);
-      $('.Chat-main__message-list').animate({ scrollTop: $('.Chat-main__message-list')[0].scrollHeight});
-      $('.Form-all')[0].reset();
-      $('.Forms__btn').prop('disabled', false);
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        let insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.Chat-main__message-list').append(insertHTML);
+        $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
+      }
     })
     .fail(function() {
-      alert("メッセージ送信に失敗しました");
+      alert('error');
     });
-  });
+  };
+  setInterval(reloadMessages, 7000);
+});
