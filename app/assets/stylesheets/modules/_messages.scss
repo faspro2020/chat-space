@@ -43,19 +43,19 @@
       width: 300px;
       padding: 20px 20px 40px;
       overflow: auto;
-      .Group-name {
-        color: #ffffff;
-        font-size: 15px;
-        margin-bottom: 5px;
-        text-decoration: none;
+      a {
+      text-decoration: none;
+        .Group-name {
+          color: #ffffff;
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        .None-message {
+          color: #ffffff;
+          font-size: 11px;
+          margin-bottom: 40px;
+        }
       }
-      .None-message {
-        color: #ffffff;
-        font-size: 11px;
-        margin-bottom: 40px;
-        text-decoration: none;
-      }
-      
     }
   }
   .Chat-main {
